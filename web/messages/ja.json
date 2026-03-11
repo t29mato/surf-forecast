@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "title": "サーフ予報 | 日本全国7日間",
+    "description": "機械学習による日本全国サーフスポットの1時間単位・7日先スコア予測"
+  },
+  "header": {
+    "title": "サーフ予報",
+    "badge": "ML powered"
+  },
+  "home": {
+    "title": "サーフ予報",
+    "subtitle": "日本全国7日間・1時間予報",
+    "updatedAt": "更新: {time}",
+    "mapButton": "マップ",
+    "listButton": "リスト",
+    "rankingTitle": "全国ランキング",
+    "bestTime": "ベスト {time}",
+    "wave": "波",
+    "wind": "風"
+  },
+  "spotDetail": {
+    "back": "← ランキングに戻る",
+    "breakType": "{type} break",
+    "bestTime7d": "7日間ベスト",
+    "bestTimeDay": "ベストタイム: {time}",
+    "waveHeight": "波高 {h}m",
+    "wavePeriod": "周期 {s}s",
+    "scoreChart": "時間別サーフスコア",
+    "waveChart": "波高 (m)",
+    "hourlyTable": {
+      "time": "時刻",
+      "score": "スコア",
+      "wave": "波高",
+      "period": "周期",
+      "swell": "うねり",
+      "wind": "風"
+    },
+    "today": "今日",
+    "detailOf": "{day} の詳細"
+  },
+  "score": {
+    "legendTitle": "スコアとは？",
+    "excellent": "絶好調",
+    "good": "良好",
+    "fair": "普通",
+    "poor": "不向き",
+    "factorsTitle": "スコアの計算要素",
+    "factors": {
+      "waveHeight": "波高",
+      "period": "波の周期",
+      "swellDir": "うねり方向",
+      "wind": "風",
+      "tide": "潮位"
+    },
+    "factorDesc": {
+      "waveHeight": "スポットの最適波高に近いほど高得点",
+      "period": "長いほど良い（8秒以上で最高評価）",
+      "swellDir": "スポット向きに正面から届くほど高評価",
+      "wind": "オフショア（追い風）が最高。強いオンショアは減点",
+      "tide": "スポットごとの最適潮位との一致度"
+    },
+    "note": "スコアは機械学習モデルによる予測値です。Open-Meteo の海洋波浪・気象予報をもとに1時間単位・7日先まで算出しています。"
+  }
+}

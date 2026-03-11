@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "title": "Surf Forecast Japan | 7-Day Hourly",
+    "description": "ML-powered hourly surf score predictions for surf spots across Japan, up to 7 days ahead."
+  },
+  "header": {
+    "title": "Surf Forecast",
+    "badge": "ML powered"
+  },
+  "home": {
+    "title": "Surf Forecast",
+    "subtitle": "Japan · 7-Day Hourly Predictions",
+    "updatedAt": "Updated: {time}",
+    "mapButton": "Map",
+    "listButton": "List",
+    "rankingTitle": "National Ranking",
+    "bestTime": "Best {time}",
+    "wave": "Wave",
+    "wind": "Wind"
+  },
+  "spotDetail": {
+    "back": "← Back to Ranking",
+    "breakType": "{type} break",
+    "bestTime7d": "7-Day Best",
+    "bestTimeDay": "Best time: {time}",
+    "waveHeight": "Height {h}m",
+    "wavePeriod": "Period {s}s",
+    "scoreChart": "Hourly Surf Score",
+    "waveChart": "Wave Height (m)",
+    "hourlyTable": {
+      "time": "Time",
+      "score": "Score",
+      "wave": "Height",
+      "period": "Period",
+      "swell": "Swell",
+      "wind": "Wind"
+    },
+    "today": "Today",
+    "detailOf": "{day} Details"
+  },
+  "score": {
+    "legendTitle": "About Scores",
+    "excellent": "Excellent",
+    "good": "Good",
+    "fair": "Fair",
+    "poor": "Poor",
+    "factorsTitle": "Score Components",
+    "factors": {
+      "waveHeight": "Wave Height",
+      "period": "Wave Period",
+      "swellDir": "Swell Direction",
+      "wind": "Wind",
+      "tide": "Tide"
+    },
+    "factorDesc": {
+      "waveHeight": "Higher score when close to optimal wave height for the spot",
+      "period": "Longer is better (peak score at 8s+)",
+      "swellDir": "Higher score when swell faces the spot directly",
+      "wind": "Offshore is best; strong onshore penalized",
+      "tide": "Match with spot's optimal tide level"
+    },
+    "note": "Scores are ML model predictions based on Open-Meteo ocean wave and weather forecasts, computed hourly up to 7 days ahead."
+  }
+}

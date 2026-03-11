@@ -35,5 +35,7 @@ data/*.log
 .idea/
 .vscode/
 
-# Frontend (managed separately)
-web/
+# Frontend
+web/.next/
+web/node_modules/
+web/.env.local
