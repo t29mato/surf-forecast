@@ -46,10 +46,20 @@ HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/120.0.0.0 Safari/537.36"
+        "Chrome/122.0.0.0 Safari/537.36"
     ),
-    "Accept": "application/json",
-    "Referer": "https://www.surfline.com/",
+    "Accept": "application/json, text/plain, */*",
+    "Accept-Language": "en-US,en;q=0.9,ja;q=0.8",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Referer": "https://www.surfline.com/surf-report/japan/JP",
+    "Origin": "https://www.surfline.com",
+    "sec-ch-ua": '"Chromium";v="122", "Not(A:Brand";v="24", "Google Chrome";v="122"',
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": '"macOS"',
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-site",
+    "Connection": "keep-alive",
 }
 
 SCORE_MAP: dict[str, float] = {
