@@ -1,10 +1,7 @@
 name: Daily Surf Forecast Update
 
 on:
-  schedule:
-    # 06:00 JST = 21:00 UTC (prev day)
-    - cron: "0 21 * * *"
-  workflow_dispatch:  # Allow manual trigger
+  workflow_dispatch:  # Manual trigger only (schedule disabled)
 
 jobs:
   update:
