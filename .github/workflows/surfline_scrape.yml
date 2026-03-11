@@ -46,6 +46,30 @@ jobs:
           restore-keys: |
             surf-db-
 
+      - name: Diagnose Surfline endpoints
+        run: |
+          python - <<'EOF'
+          import requests
+          HEADERS = {
+              "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+              "Accept": "application/json, text/plain, */*",
+              "Referer": "https://www.surfline.com/",
+              "Origin": "https://www.surfline.com",
+          }
+          endpoints = [
+              ("mapview",       "https://services.surfline.com/kbyg/mapview?south=24&north=45&west=130&east=145"),
+              ("spot-conditions","https://services.surfline.com/kbyg/spots/forecasts/conditions?spotId=5842041f4e65fad6a7708897&days=1"),
+              ("spot-surf",     "https://services.surfline.com/kbyg/spots/forecasts/surf?spotId=5842041f4e65fad6a7708897&days=1&intervalHours=1"),
+              ("spot-wave",     "https://services.surfline.com/kbyg/spots/forecasts/wave?spotId=5842041f4e65fad6a7708897&days=1&intervalHours=1"),
+          ]
+          for name, url in endpoints:
+              try:
+                  r = requests.get(url, headers=HEADERS, timeout=10)
+                  print(f"[{r.status_code}] {name}")
+              except Exception as e:
+                  print(f"[ERR] {name}: {e}")
+          EOF
+
       - name: Run Surfline scraper
         run: python scripts/scrape_surfline.py
 
