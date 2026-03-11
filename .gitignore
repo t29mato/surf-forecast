@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+.eggs/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment / secrets
+.env
+.env.*
+*.pem
+~/.cdsapirc
+
+# Secrets
+.cdsapirc
+
+# Data (large / generated)
+data/surf_forecast.db
+data/surf_forecast.db-shm
+data/surf_forecast.db-wal
+data/era5_cache/
+data/models/*.joblib
+data/*.log
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# Frontend (managed separately)
+web/

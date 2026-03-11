@@ -1,0 +1,53 @@
+name: Daily Surf Forecast Update
+
+on:
+  schedule:
+    # 06:00 JST = 21:00 UTC (prev day)
+    - cron: "0 21 * * *"
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache pip dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Restore SQLite database
+        uses: actions/cache@v4
+        with:
+          path: data/surf_forecast.db
+          key: surf-db-${{ github.run_number }}
+          restore-keys: |
+            surf-db-
+
+      - name: Run daily update
+        run: python scripts/daily_update.py
+
+      - name: Commit updated predictions JSON
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add web/public/data/predictions.json
+          git diff --staged --quiet || git commit -m "chore: update surf predictions $(date +%Y-%m-%d)"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

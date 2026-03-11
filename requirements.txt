@@ -1,0 +1,20 @@
+# ML
+lightgbm>=4.0.0
+optuna>=3.0.0
+scikit-learn>=1.3.0
+pandas>=2.0.0
+numpy>=1.24.0
+joblib>=1.3.0
+
+# Data collection
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+cdsapi>=0.6.0
+
+# Moon phase / astronomy
+ephem>=4.1.0
+
+# Utilities
+python-dotenv>=1.0.0
+tqdm>=4.65.0
